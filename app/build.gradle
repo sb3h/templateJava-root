@@ -5,12 +5,14 @@ targetCompatibility = 1.8
 
 
 repositories {
+    maven{url="http://maven.aliyun.com/nexus/content/groups/public/"}
     jcenter()
+    mavenCentral()
 }
 
 dependencies {
-    compile rootProject.ext.rxJava
-    compile rootProject.ext.junit
+//    compile rootProject.ext.rxJava
+//    compile rootProject.ext.junit
     //testCompile rootProject.ext.junit
 }
 
