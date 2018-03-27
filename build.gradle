@@ -1,10 +1,35 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
+apply from: rootProject.file('dependencies.gradle')
+
 
 allprojects {
     repositories {
-		maven{url="http://maven.aliyun.com/nexus/content/groups/public/"}
+        maven { url = "${maven_aliyun}" }
         jcenter()
         mavenCentral()
+    }
+}
+
+subprojects {
+    buildscript {
+        repositories {
+            maven { url = "${maven_aliyun}" }
+            jcenter()
+            mavenCentral()
+        }
+        //    dependencies {
+//        classpath 'org.springframework.boot:spring-boot-starter-parent:1.4.1.RELEASE'
+//    }
+    }
+
+    repositories {
+        maven { url = "${maven_aliyun}" }
+        jcenter()
+        mavenCentral()
+    }
+
+    tasks.withType(JavaCompile) {
+        options.encoding = 'UTF-8'
     }
 }
 
@@ -12,4 +37,4 @@ task clean(type: Delete) {
     delete rootProject.buildDir
 }
 
-apply from: rootProject.file('dependencies.gradle')
+

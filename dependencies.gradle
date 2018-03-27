@@ -90,4 +90,6 @@ ext {
 
 
   javaParser = "com.github.javaparser:javaparser-core:2.1.0"
+
+  maven_aliyun = "http://maven.aliyun.com/nexus/content/groups/public/"
 }
